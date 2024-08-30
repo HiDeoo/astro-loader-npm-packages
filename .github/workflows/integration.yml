@@ -33,6 +33,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Build
+        run: pnpm build
+        working-directory: packages/astro-loader-npm-packages
+
       - name: Lint
         run: pnpm lint
 
