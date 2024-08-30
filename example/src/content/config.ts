@@ -3,6 +3,4 @@ import { defineCollection } from 'astro:content'
 
 const packages = defineCollection({ loader: npmPackagesLoader({ author: 'hideoo' }) })
 
-export const collections = {
-  packages,
-}
+export const collections = { packages }

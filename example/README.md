@@ -1,11 +1,6 @@
 <div align="center">
-  <h1>astro-loader-npm-packages 🚧</h1>
-  <p>astro-loader-npm-packages description</p>
-  <p>
-    <a href="https://dummyimage.com/520x350/121212/cdc8be.png&text=screenshot" title="Screenshot of astro-loader-npm-packages">
-      <img alt="Screenshot of astro-loader-npm-packages" src="https://dummyimage.com/520x350/121212/cdc8be.png&text=screenshot" width="520" />
-    </a>
-  </p>
+  <h1>astro-loader-npm-packages 📦</h1>
+  <p>Astro Content Layer loader to load npm packages from a given author.</p>
 </div>
 
 <div align="center">
@@ -18,12 +13,13 @@
   <br />
 </div>
 
-## Features
+## Example
 
-astro-loader-npm-packages presentation.
+Run the example locally using [pnpm](https://pnpm.io):
 
-- astro-loader-npm-packages feature 1
-- astro-loader-npm-packages feature 2
+```shell
+pnpm run dev
+```
 
 ## License
 
