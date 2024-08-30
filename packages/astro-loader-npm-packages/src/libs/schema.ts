@@ -54,3 +54,5 @@ export const NpmPackagesResponseSchema = z.object({
 })
 
 export type NpmPackagesResponse = z.output<typeof NpmPackagesResponseSchema>
+
+// TODO(HiDeoo) flags

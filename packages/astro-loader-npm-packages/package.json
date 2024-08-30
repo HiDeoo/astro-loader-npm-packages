@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "tsup src --format esm --dts --watch",
     "build": "tsup src --format esm --dts --clean",
-    "test": "echo \"Error: no test implemented.\" && exit 1",
+    "test": "vitest",
     "lint": "prettier -c --cache . && eslint . --cache --max-warnings=0 && tsc --noEmit",
     "prepublishOnly": "pnpm build"
   },
@@ -21,8 +21,10 @@
   },
   "devDependencies": {
     "astro": "^4.15.1",
+    "msw": "^2.4.1",
     "tsup": "^8.2.4",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
   },
   "peerDependencies": {
     "astro": ">=4.15.0"
