@@ -3,10 +3,11 @@ import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 
 const packages = await getCollection('packages')
+const title = "HiDeoo's packages"
 ---
 
-<Layout title="// TODO(HiDeoo) ">
-  <h1>HiDeoo's packages</h1>
+<Layout title={title}>
+  <h1>{title}</h1>
   <ul>
     {
       packages.map(({ data, id }) => (

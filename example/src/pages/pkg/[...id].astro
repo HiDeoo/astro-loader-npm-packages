@@ -15,9 +15,17 @@ export const getStaticPaths = (async () => {
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
-const { pkg } = Astro.props
+const pkg = Astro.props.pkg.data.package
 ---
 
-<Layout title="// TODO(HiDeoo) ">
-  <h1>{pkg.data.package.name}</h1>
+<Layout title={pkg.name}>
+  <h1>{pkg.name}</h1>
+  <p>
+    <a href={pkg.links.npm}>npm</a>
+    {pkg.links.homepage && <a href={pkg.links.homepage}>homepage</a>}
+    {pkg.links.repository && <a href={pkg.links.repository}>repository</a>}
+  </p>
+  <p>Version: <code>{pkg.version}</code></p>
+  <p>Description: {pkg.description}</p>
+  {pkg.keywords.length > 0 && <p>Keywords: {pkg.keywords.join(', ')}</p>}
 </Layout>
