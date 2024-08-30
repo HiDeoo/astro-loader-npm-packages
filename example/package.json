@@ -1,0 +1,37 @@
+{
+  "name": "astro-loader-npm-packages-example",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "// TODO(HiDeoo) ",
+  "author": "HiDeoo <github@hideoo.dev> (https://hideoo.dev)",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "prettier -c --cache . && astro check",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.15.0",
+    "@astrojs/check": "^0.9.3",
+    "@hideoo/astro-loader-npm-packages": "workspace:*",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@9.9.0",
+  "private": true,
+  "sideEffects": false,
+  "keywords": [
+    "// TODO(HiDeoo) "
+  ],
+  "homepage": "https://github.com/HiDeoo/astro-loader-npm-packages",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HiDeoo/astro-loader-npm-packages.git"
+  },
+  "bugs": "https://github.com/HiDeoo/astro-loader-npm-packages/issues"
+}

@@ -1,1 +1,1 @@
-# astro-loader-npm-packages
+packages/astro-loader-npm-packages/README.md
