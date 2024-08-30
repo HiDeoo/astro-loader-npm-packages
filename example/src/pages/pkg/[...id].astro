@@ -1,0 +1,31 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
+import { getCollection } from 'astro:content'
+
+import Layout from '../../layouts/Layout.astro'
+
+export const getStaticPaths = (async () => {
+  const packages = await getCollection('packages')
+
+  return packages.map((pkg) => ({
+    params: { id: pkg.id },
+    props: { pkg },
+  }))
+}) satisfies GetStaticPaths
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const pkg = Astro.props.pkg.data.package
+---
+
+<Layout title={pkg.name}>
+  <h1>{pkg.name}</h1>
+  <p>
+    <a href={pkg.links.npm}>npm</a>
+    {pkg.links.homepage && <a href={pkg.links.homepage}>homepage</a>}
+    {pkg.links.repository && <a href={pkg.links.repository}>repository</a>}
+  </p>
+  <p>Version: <code>{pkg.version}</code></p>
+  <p>Description: {pkg.description}</p>
+  {pkg.keywords.length > 0 && <p>Keywords: {pkg.keywords.join(', ')}</p>}
+</Layout>

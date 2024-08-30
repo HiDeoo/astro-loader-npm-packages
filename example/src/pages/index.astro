@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../layouts/Layout.astro'
+
+const packages = await getCollection('packages')
+const title = "HiDeoo's packages"
+---
+
+<Layout title={title}>
+  <h1>{title}</h1>
+  <ul>
+    {
+      packages.map(({ data, id }) => (
+        <li>
+          <a href={`/pkg/${id}/`}>
+            <code>{data.package.name}</code>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

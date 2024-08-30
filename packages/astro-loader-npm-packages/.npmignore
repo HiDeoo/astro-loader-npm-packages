@@ -1,0 +1,7 @@
+.eslintcache
+.prettierignore
+src
+tests
+tsconfig.json
+tsconfig.tsbuildinfo
+vitest.config.ts

@@ -1,0 +1,48 @@
+{
+  "name": "astro-loader-npm-packages-monorepo",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Astro Content Layer loader to load npm packages from a given author.",
+  "author": "HiDeoo <github@hideoo.dev> (https://hideoo.dev)",
+  "type": "module",
+  "scripts": {
+    "test": "pnpm --stream -r test",
+    "lint": "pnpm -r lint",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@hideoo/eslint-config": "^3.0.1",
+    "@hideoo/prettier-config": "^2.0.0",
+    "@hideoo/tsconfig": "^2.0.1",
+    "eslint": "^8.57.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@9.9.0",
+  "private": true,
+  "sideEffects": false,
+  "keywords": [
+    "astro",
+    "astro-loader",
+    "npm",
+    "packages"
+  ],
+  "homepage": "https://github.com/HiDeoo/astro-loader-npm-packages",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HiDeoo/astro-loader-npm-packages.git"
+  },
+  "bugs": "https://github.com/HiDeoo/astro-loader-npm-packages/issues",
+  "lint-staged": {
+    "*": [
+      "prettier -w -u --cache",
+      "eslint --cache --no-warn-ignored --max-warnings=0"
+    ]
+  }
+}
