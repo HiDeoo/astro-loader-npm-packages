@@ -52,3 +52,5 @@ export const NpmPackagesResponseSchema = z.object({
   total: z.number(),
   time: z.coerce.date(),
 })
+
+export type NpmPackagesResponse = z.output<typeof NpmPackagesResponseSchema>
