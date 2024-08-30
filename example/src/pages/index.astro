@@ -1,1 +1,9 @@
+---
+import { getCollection } from 'astro:content'
+
+const packages = await getCollection('packages')
+// FIXME(HiDeoo)
+console.log('🚨 [index.astro:5] packages:', packages)
+---
+
 <div>plop</div>
