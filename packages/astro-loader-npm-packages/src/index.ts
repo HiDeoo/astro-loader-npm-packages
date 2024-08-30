@@ -1,5 +1,6 @@
 import { AstroError } from 'astro/errors'
 import type { Loader } from 'astro/loaders'
+import Slugger from 'github-slugger'
 
 import pkg from '../package.json'
 
@@ -30,10 +31,10 @@ export function npmPackagesLoader(userConfig: NpmPackagesLoaderUserConfig): Load
         throw new Error(`Failed to load packages for ${config.author}.`)
       }
 
-      let json: Record<string, unknown>
+      let json: unknown
 
       try {
-        json = (await res.json()) as typeof json
+        json = await res.json()
       } catch (error) {
         throw new Error(`Failed to parse packages for ${config.author}.`, { cause: error })
       }
@@ -47,8 +48,10 @@ export function npmPackagesLoader(userConfig: NpmPackagesLoaderUserConfig): Load
       // TODO(HiDeoo) max
       // TODO(HiDeoo) pagination
 
+      const slugger = new Slugger()
+
       for (const pkg of parsedPackages.data.objects) {
-        const id = pkg.package.name
+        const id = slugger.slug(pkg.package.name)
         const parsedPkg = await parseData({ id, data: pkg })
         store.set({ id, data: parsedPkg })
       }

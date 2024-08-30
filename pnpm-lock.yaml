@@ -52,6 +52,10 @@ importers:
         version: 5.5.4
 
   packages/astro-loader-npm-packages:
+    dependencies:
+      github-slugger:
+        specifier: ^2.0.0
+        version: 2.0.0
     devDependencies:
       astro:
         specifier: ^4.15.1

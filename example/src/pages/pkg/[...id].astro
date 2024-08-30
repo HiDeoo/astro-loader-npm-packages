@@ -1,0 +1,23 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
+import { getCollection } from 'astro:content'
+
+import Layout from '../../layouts/Layout.astro'
+
+export const getStaticPaths = (async () => {
+  const packages = await getCollection('packages')
+
+  return packages.map((pkg) => ({
+    params: { id: pkg.id },
+    props: { pkg },
+  }))
+}) satisfies GetStaticPaths
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const { pkg } = Astro.props
+---
+
+<Layout title="// TODO(HiDeoo) ">
+  <h1>{pkg.data.package.name}</h1>
+</Layout>
