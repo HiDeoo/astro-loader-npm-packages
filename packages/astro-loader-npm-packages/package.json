@@ -38,7 +38,7 @@
   },
   "sideEffects": false,
   "keywords": [
-    "astro",
+    "withastro",
     "astro-loader",
     "npm",
     "packages"
