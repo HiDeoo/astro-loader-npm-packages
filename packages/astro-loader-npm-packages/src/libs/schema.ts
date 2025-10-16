@@ -2,7 +2,6 @@ import { z } from 'astro/zod'
 
 const npmPackageInfosSchema = z.object({
   name: z.string(),
-  scope: z.union([z.literal('unscoped'), z.string()]),
   version: z.string(),
   description: z.string(),
   keywords: z.array(z.string()),
@@ -12,11 +11,6 @@ const npmPackageInfosSchema = z.object({
     homepage: z.string().optional(),
     repository: z.string().optional(),
     bugs: z.string().optional(),
-  }),
-  author: z.object({
-    name: z.string(),
-    email: z.string().optional(),
-    url: z.string().optional(),
   }),
   publisher: z.object({
     username: z.string(),
